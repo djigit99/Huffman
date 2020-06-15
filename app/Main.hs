@@ -10,9 +10,8 @@ import           Huffman
 main :: IO ()
 main = do
   firstFile <- readFile "resources/file1.txt"
-  secondFile <- readFile "resources/file2.txt"
   
-  let unionFiles = (lines firstFile) ++ (lines secondFile)
+  let unionFiles = (lines firstFile)
   let countedData = histogram (concat unionFiles)
   let sortedData = sortBy (comparing swap) countedData
   putStrLn $ show "sorted by number of unique elements"
